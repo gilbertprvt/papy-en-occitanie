@@ -103,7 +103,7 @@
   <script>
     /* Pas d'introduction quand on revient à l'accueil depuis une autre page du site */
     try { var r = document.referrer && new URL(document.referrer);
-      if (r && r.origin === location.origin && r.pathname.indexOf('/ame-des-regions/') === 0)
+      if (r && r.origin === location.origin && r.pathname.indexOf(location.pathname.replace(/[^/]*$/, '')) === 0)
         document.documentElement.classList.add('sans-intro'); } catch (e) {}
   </script>
   <style>
